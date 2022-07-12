@@ -6,6 +6,7 @@ from joblib import load
 
 
 def predict(request):
+      
       RanfomForest = load("RandomFC\model\RandomForest_joblib.pkl")
       if request.method == 'GET':
             

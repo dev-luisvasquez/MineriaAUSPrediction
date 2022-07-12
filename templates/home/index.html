@@ -9,16 +9,16 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
       <title>Random Forest</title>
 </head>
-<body>
-      <div  class="container">
-            <h1>Prediccion de lluvia en Australia</h1>
+<body style="background-image:url('https://images7.alphacoders.com/716/716104.jpg') ; color:rgb(255, 255, 255); padding:50px;">
+      <div  class="container" style="background-color: #2c20209a ; border-radius: 15px ;">
+            <h1 style="text-align:center ; font-weight: bold;">Prediccion de lluvia en Australia</h1>
 
-            <form action="" method="post">
+            <form style="color: rgb(255, 255, 255); font-weight: bold;" action="" method="post">
             {% csrf_token %}
 
-                  <div class="mb-3">
+                  <div class="mb-3" >
                         <label for="disabledSelect" class="form-label">Selecciona la ciudad</label>
-                        <ion-icon name="pin"></ion-icon>
+                        <ion-icon name="pin" style="color: rgb(239, 64, 16);"></ion-icon>
                         <select name="Loc" class="form-select">
                           <option value="0">Cairns</option>
                           <option value="1">Darwin</option>
@@ -28,43 +28,38 @@
 
                   <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Humedad 3pm</label>
-                        <ion-icon name="water"></ion-icon>
-                        <input type="number" step="0.1" min="1" max="100"  class="form-control" name="hum3" required>
-                        <div id="emailHelp" class="form-text">Rangos entre 0-100</div>
+                        <ion-icon name="water" style="color: rgb(0, 179, 255);"></ion-icon>
+                        <input type="number" step="0.1" min="1" max="100"  class="form-control" name="hum3" required placeholder="Rangos entre 0-100">
                   </div>
 
                   <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Humedad 9am</label>
-                        <ion-icon name="water"></ion-icon>
-                        <input type="number" step="0.1" min="1" max="100" class="form-control" name="hum9" required>
-                        <div id="emailHelp" class="form-text">Rangos entre 0-100</div>
+                        <ion-icon name="water" style="color: rgb(0, 179, 255);"  ></ion-icon>
+                        <input type="number" step="0.1" min="1" max="100" class="form-control" name="hum9" required placeholder="Rangos entre 0-100">
                   </div>
 
                   <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Evaporacion</label>
-                        <ion-icon name="arrow-round-up"></ion-icon>
-                        <ion-icon name="arrow-round-up"></ion-icon>
-                        <input type="number" step="0.1" min="1" max="100"  class="form-control" name="evap" required>
-                        <div id="emailHelp" class="form-text">Rangos entre 0-100</div>
+                        <ion-icon name="arrow-round-up" style="color: rgb(9, 109, 223);"></ion-icon>
+                        <ion-icon name="arrow-round-up" style="color: rgb(9, 109, 223);"></ion-icon>
+                        <input type="number" step="0.1" min="1" max="100"  class="form-control" name="evap" required placeholder="Rangos entre 0-100">
                   </div>
 
                   <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Temperatura 9am</label>
-                        <ion-icon name="thermometer"></ion-icon>
-                        <input type="number" step="0.1" min="1" max="100" class="form-control" name="temp9" required>
-                        <div id="emailHelp" class="form-text">Rangos entre 0-100</div>
+                        <ion-icon name="thermometer" style="color: rgb(255, 0, 0);"></ion-icon>
+                        <input type="number" step="0.1" min="1" max="100" class="form-control" name="temp9" required placeholder="Rangos entre 0-100">
                   </div>
 
                   <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Temperatura 3pm</label>
-                        <ion-icon name="thermometer"></ion-icon>
-                        <input type="number" step="0.1" min="1" max="100" class="form-control" name="temp3" required>
-                        <div id="emailHelp" class="form-text">Rangos entre 0-100</div>
+                        <ion-icon name="thermometer" style="color: rgb(255, 0, 0);"></ion-icon>
+                        <input type="number" step="0.1" min="1" max="100" class="form-control" name="temp3" required placeholder="Rangos entre 0-100">
                   </div>
 
                   <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Rain Today</label>
-                        <ion-icon name="rainy"></ion-icon>
+                        <ion-icon name="rainy" style="color: rgb(22, 191, 210);"></ion-icon>
                         <div class="form-check">
                               <input class="form-check-input" type="radio" name="rain" value="0" checked>
                               <label class="form-check-label" for="flexRadioDefault1">
@@ -79,19 +74,19 @@
                         </div>
                   </div>
 
-                  <a href="{{predict}} "><button type="submit"  class="btn btn-primary" id=".submit">Predecir</button></a>
+                  <a href="{{predict}} "><button type="submit"  class="btn btn-success" id=".submit">Predecir</button></a>
 
                   <form  method="post">
                         {% if predict == 1 %}
                               <div style="text-align:center;">
-                                    <img  src="https://cdn.icon-icons.com/icons2/1715/PNG/512/2730386-character-cloud-inkcontober-rain_112687.png" alt="" srcset="" width="100px" height="100px">
-                                    <h4>Va a llover</h4>
+                                    <img  src="https://cdn.icon-icons.com/icons2/1715/PNG/512/2730386-character-cloud-inkcontober-rain_112687.png" alt="" srcset="" width="125px" height="125px">
+                                    <h4>Si Llovera</h4>
                               </div>
                           
                         {% elif predict == 0 %}
                               <div style="text-align:center;">
-                                    <img  src="https://cdn-icons-png.flaticon.com/512/1164/1164903.png" alt="" srcset="" width="100px" height="100px">
-                                    <h4>No va a Llover</h4>  
+                                    <img  src="https://cdn-icons-png.flaticon.com/512/1164/1164903.png" alt="" srcset="" width="125px" height="125px">
+                                    <h4>No Llovera</h4>  
                               </div>
                            
                         {% else %}
