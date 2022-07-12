@@ -1,2 +1,2 @@
 # MineriaAUSPrediction
-Pagina para predecir la lluvia en 3 ciudades de Australia, Modelo creado en base al análisis de machine learning 
+Esta pagina muestra el modelo RandomForestClassifier en produccion para la prediccion de lluvia en 3 ciudades de australia(Cairns, Darwin, CoffsHarbour), todo el proceso de ML lo podrias encontrar en el siguiente repositorio https://github.com/Dev-LuisVasquez/MineriaAUS
