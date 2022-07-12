@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- CSS only -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      <title>Random Forest</title>
+</head>
+<body>
+      <div  class="container">
+            <h1>Prediccion de lluvia en Australia</h1>
+
+            <form action="" method="post">
+            {% csrf_token %}
+
+                  <div class="mb-3">
+                        <label for="disabledSelect" class="form-label">Selecciona la ciudad</label>
+                        <ion-icon name="pin"></ion-icon>
+                        <select name="Loc" class="form-select">
+                          <option value="0">Cairns</option>
+                          <option value="1">Darwin</option>
+                          <option value="2">CoffsHarbour</option>
+                        </select>
+                  </div>
+
+                  <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Humedad 3pm</label>
+                        <ion-icon name="water"></ion-icon>
+                        <input type="number" step="0.1" min="1" max="100"  class="form-control" name="hum3" required>
+                        <div id="emailHelp" class="form-text">Rangos entre 0-100</div>
+                  </div>
+
+                  <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Humedad 9am</label>
+                        <ion-icon name="water"></ion-icon>
+                        <input type="number" step="0.1" min="1" max="100" class="form-control" name="hum9" required>
+                        <div id="emailHelp" class="form-text">Rangos entre 0-100</div>
+                  </div>
+
+                  <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Evaporacion</label>
+                        <ion-icon name="arrow-round-up"></ion-icon>
+                        <ion-icon name="arrow-round-up"></ion-icon>
+                        <input type="number" step="0.1" min="1" max="100"  class="form-control" name="evap" required>
+                        <div id="emailHelp" class="form-text">Rangos entre 0-100</div>
+                  </div>
+
+                  <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Temperatura 9am</label>
+                        <ion-icon name="thermometer"></ion-icon>
+                        <input type="number" step="0.1" min="1" max="100" class="form-control" name="temp9" required>
+                        <div id="emailHelp" class="form-text">Rangos entre 0-100</div>
+                  </div>
+
+                  <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Temperatura 3pm</label>
+                        <ion-icon name="thermometer"></ion-icon>
+                        <input type="number" step="0.1" min="1" max="100" class="form-control" name="temp3" required>
+                        <div id="emailHelp" class="form-text">Rangos entre 0-100</div>
+                  </div>
+
+                  <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Rain Today</label>
+                        <ion-icon name="rainy"></ion-icon>
+                        <div class="form-check">
+                              <input class="form-check-input" type="radio" name="rain" value="0" checked>
+                              <label class="form-check-label" for="flexRadioDefault1">
+                                No
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="rain" value="1" >
+                              <label class="form-check-label" for="flexRadioDefault2">
+                                Si
+                              </label>
+                        </div>
+                  </div>
+
+                  <a href="{{predict}} "><button type="submit"  class="btn btn-primary" id=".submit">Predecir</button></a>
+
+                  <form  method="post">
+                        {% if predict == 1 %}
+                              <div style="text-align:center;">
+                                    <img  src="https://cdn.icon-icons.com/icons2/1715/PNG/512/2730386-character-cloud-inkcontober-rain_112687.png" alt="" srcset="" width="100px" height="100px">
+                                    <h4>Va a llover</h4>
+                              </div>
+                          
+                        {% elif predict == 0 %}
+                              <div style="text-align:center;">
+                                    <img  src="https://cdn-icons-png.flaticon.com/512/1164/1164903.png" alt="" srcset="" width="100px" height="100px">
+                                    <h4>No va a Llover</h4>  
+                              </div>
+                           
+                        {% else %}
+                          <p></p>
+                        <!-- <img src="../../modelo/kitten.png" alt="" srcset="" width="50px" height="50px"> -->
+                        {% endif %}
+                  </form>
+                  
+                  
+            </form>
+
+            
+            
+
+      </div>
+      
+
+
+      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
